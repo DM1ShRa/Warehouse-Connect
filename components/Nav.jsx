@@ -24,10 +24,10 @@ const Nav = () => {
     <nav className="flex-between w-full mb-16 pt-3 px-4">
       <Link href="/" className="flex gap-2 flex-center">
         <Image 
-          src={"/logo.png"}
+          src={"/logo_ware.png"}
           alt="Agrifarm logo"
           width={200}
-          height={30}
+          height={130}
           className="object-contain"
         />
       </Link>
@@ -36,20 +36,16 @@ const Nav = () => {
         {session?.user ? (
           <div className="flex gap-12 ">
             <div className="flex gap-20 flex-center">
-                <Link href="/create-prompt" 
+                <Link href="/create-post" 
                 className="black_btn">
-                    HOME
+                    Post
                 </Link>
 
-                <Link href="/create-prompt" 
+                {/* <Link href="/create-prompt" 
                 className="black_btn">
                     PRODUCTS
-                </Link>
+                </Link> */}
 
-                <Link href="/weather" 
-                className="black_btn">
-                    WEATHER
-                </Link>
 
                 <Link href="/create-prompt" 
                 className="black_btn">

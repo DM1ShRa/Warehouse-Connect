@@ -1,5 +1,5 @@
 import React from "react";
-
+import Feed from "@components/Feed";
 const LandingPage = () => {
   return (
     <section className="w-full  flex-col">
@@ -7,7 +7,7 @@ const LandingPage = () => {
         {" "}
         {/* Changed from items-center */}
         <h1 className="head_text text-center">
-          AGRI<span className="custom_farm_style">FARM</span>
+          WAREHOUSE<span className="custom_farm_style"> CONNECT</span>
         </h1>
       </div>
       <p className="message1">
@@ -34,7 +34,7 @@ const LandingPage = () => {
 </div>
 
 
-      {/* <Feed /> */}
+      <Feed />
     </section>
   );
 };
