@@ -1,5 +1,6 @@
 import React from "react";
 import Feed from "@components/Feed";
+import GoogleMapView from "@components/GoogleMapsView";
 const LandingPage = () => {
   return (
     <section className="w-full  flex-col">
@@ -33,7 +34,7 @@ const LandingPage = () => {
   </div>
 </div>
 
-
+      <GoogleMapView/>
       <Feed />
     </section>
   );
