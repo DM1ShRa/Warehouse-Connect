@@ -47,10 +47,10 @@ const Nav = () => {
                 </Link> */}
 
 
-                <Link href="/create-prompt" 
+                {/* <Link href="/create-prompt" 
                 className="black_btn">
                     CART
-                </Link>
+                </Link> */}
 
                 <Link href="/create-prompt" 
                 className="black_btn">

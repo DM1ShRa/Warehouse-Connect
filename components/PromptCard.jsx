@@ -55,8 +55,8 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
           <Image
             src={
               copied === post.prompt
-                ? "/assets/icons/tick.svg"
-                : "/assets/icons/copy.svg"
+                ? "./tick.svg"
+                : "./copy.svg"
             }
             alt={copied === post.prompt ? "tick_icon" : "copy_icon"}
             width={12}
@@ -86,14 +86,14 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
       </p>
       <div className='flex justify-between items-center'> {/* Container for the tag and the review button */}
         <p
-          className='font-inter text-sm blue_gradient cursor-pointer'
+          className='font-inter text-sm grey_gradient cursor-pointer'
           onClick={() => handleTagClick && handleTagClick(post.tag)}
         >
           #{post.tag}
         </p>
 
         <button
-          className='font-inter text-sm bg-blue-500 text-white px-2 py-1 rounded'
+          className='font-inter text-sm bg-gray-500 text-white px-2 py-1 rounded'
           onClick={() => {
             window.location.href = '/ReviewPage';
           }}

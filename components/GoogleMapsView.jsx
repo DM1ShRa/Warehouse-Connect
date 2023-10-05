@@ -1,7 +1,7 @@
 "use client"
 
 import { UserLocationContext } from "@context/UserLocationContext"
-import { GoogleMap,LoadScript, Marker, MarkerF } from "@react-google-maps/api"
+import { GoogleMap,LoadScript, MarkerF } from "@react-google-maps/api"
 import { useContext } from "react"
 
 function GoogleMapsView() {

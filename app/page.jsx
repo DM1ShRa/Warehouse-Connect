@@ -22,6 +22,8 @@ const LandingPage = () => {
       <button type="button" className="explore_btn">
         Explore Now!
       </button>
+      
+
       <div className="flex justify-end">
   <div className="w-226 h-316 flex-shrink-0 rounded-r-40 bg-gradient-to-r from-transparent via-green-400 to-green-400 border border-gray-300">
     <div className="w-full h-full bg-cover bg-no-repeat bg-center bg-lightgray" style={{backgroundImage: 'linear-gradient(180deg, rgba(115, 205, 0, 0.00) 0%, rgba(10, 141, 15, 0.51) 100%), url(/farmer_hand.jpeg)'}}></div>
