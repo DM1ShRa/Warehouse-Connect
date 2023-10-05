@@ -22,7 +22,7 @@ const CreatePost = () => {
     storageCapacity: 0, // Replace with an appropriate initial value
     availableStorage: 0, // Replace with an appropriate initial value
     description: "", // Replace with an appropriate initial value
-    goodsType: [], // Replace with an appropriate initial value or empty array
+    goodsType: "", // Replace with an appropriate initial value or empty array
   });
   
 

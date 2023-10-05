@@ -1,43 +1,59 @@
-import React from "react";
+"use client"
+import React, { useRef } from "react";
 import Feed from "@components/Feed";
 import GoogleMapView from "@components/GoogleMapsView";
+
 const LandingPage = () => {
+  const feedRef = useRef(null);
+
+  const handleExploreNowClick = () => {
+    if (feedRef.current) {
+      feedRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="w-full  flex-col">
       <div className="flex items-start">
-        {" "}
-        {/* Changed from items-center */}
         <h1 className="head_text text-center">
           WAREHOUSE<span className="custom_farm_style"> CONNECT</span>
         </h1>
       </div>
+      <br />
       <p className="message1">
-        Empowering farmers with Morden Ecommerce Solution
+        WarehouseConnect is an intuitive surplus food distribution platform
       </p>
       <p className="message2">
-        Explore, Transact and Thrive in Agriculture:Discover Quality
+        efficiently connecting surplus food storage providers with organizations
+        in need. It aims to
         <br />
-        tools, Accurate Prediction and Growing Community.
+        reduce food waste and enhance the supply chain by optimizing warehouse
+        space allocation
+        <br />
+        and fostering collaboration for a sustainable impact.
       </p>
-      <button type="button" className="explore_btn">
+      <br />
+      <br />
+
+      <button
+        type="button"
+        className="bg-black text-white rounded-lg px-10 py-4 cursor-pointer"
+        onClick={handleExploreNowClick}
+      >
         Explore Now!
       </button>
-      
+      <br />
+      <br />
 
-      <div className="flex justify-end">
-  <div className="w-226 h-316 flex-shrink-0 rounded-r-40 bg-gradient-to-r from-transparent via-green-400 to-green-400 border border-gray-300">
-    <div className="w-full h-full bg-cover bg-no-repeat bg-center bg-lightgray" style={{backgroundImage: 'linear-gradient(180deg, rgba(115, 205, 0, 0.00) 0%, rgba(10, 141, 15, 0.51) 100%), url(/farmer_hand.jpeg)'}}></div>
-  </div>
-  <div className="w-226 h-496 flex-shrink-0 rounded-r-0 bg-gradient-to-r from-transparent via-green-300 to-green-300 border border-gray-300 ml-2">
-    <div className="w-full h-full bg-cover bg-no-repeat bg-center bg-lightgray" style={{backgroundImage: 'linear-gradient(180deg, rgba(115, 205, 0, 0.00) 0%, rgba(10, 141, 15, 0.26) 100%), url(/tractor.jpeg)', backgroundPosition: '-351.461px 0px', backgroundSize: '328.802% 100%'}}></div>
-  </div>
-  <div className="w-226 h-676 flex-shrink-0 rounded-l-40 bg-gradient-to-r from-transparent via-green-400 to-green-400 border border-gray-300 ml-2">
-    <div className="w-full h-full bg-cover bg-no-repeat bg-center bg-lightgray" style={{backgroundImage: 'linear-gradient(180deg, rgba(115, 205, 0, 0.00) 0%, rgba(10, 141, 15, 0.46) 100%), url(/wheat.jpeg)'}}></div>
-  </div>
-</div>
 
-      <GoogleMapView/>
-      <Feed />
+
+      <div className="mt-10 bg-white rounded-lg shadow-xl w-full max-w-screen-lg overflow-hidden border border-gray-200">
+        <GoogleMapView />
+      </div>
+
+      <div ref={feedRef} className="flex justify-end">
+        <Feed />
+      </div>
     </section>
   );
 };

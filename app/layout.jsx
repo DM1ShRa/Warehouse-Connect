@@ -13,33 +13,46 @@ import { UserLocationContext } from '@context/UserLocationContext';
 // }
 
 const RootLayout = ({ children }) => {
-    const [userLocation , setUserLocation] = useState([]);
-    useEffect(()=>{
+    const [userLocation, setUserLocation] = useState([]);
+    useEffect(() => {
         getUserLocation();
-    },[])
-    const getUserLocation=()=>{
-       navigator.geolocation.getCurrentPosition(function(pos){
-        console.log(pos)
-        setUserLocation({
-            lat: pos.coords.latitude,
-            lng: pos.coords.longitude
+    }, [])
+    const getUserLocation = () => {
+        navigator.geolocation.getCurrentPosition(function (pos) {
+            console.log(pos)
+            setUserLocation({
+                lat: pos.coords.latitude,
+                lng: pos.coords.longitude
+            })
         })
-       }) 
     }
-  return (
-    <html lang='en'>
-        <body>
-            <Provider>
-                <UserLocationContext.Provider value={{userLocation,setUserLocation}}>
-                <main className="app">
-                    <Nav/>
-                    {children}
-                </main>
-                </UserLocationContext.Provider>
-            </Provider>
-        </body>
-    </html>
-  )
+    return (
+        <html lang='en'>
+            <body>
+                <Provider>
+                    <UserLocationContext.Provider value={{ userLocation, setUserLocation }}>
+                        <main className="app">
+                            <Nav />
+                            {children}
+                        </main>
+                        <br />
+                        <footer className="footer">
+                            <div className="container">
+                                <div className="footer-content">
+                                    <p>&copy; 2023 Warehouse Connect. All rights reserved.</p>
+                                    <ul className="footer-links">
+                                        <li><a href="#">Terms of Use</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </footer>
+                    </UserLocationContext.Provider>
+                </Provider>
+            </body>
+        </html>
+    )
 }
 
 export default RootLayout

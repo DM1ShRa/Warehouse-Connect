@@ -173,3 +173,57 @@
   @apply flex justify-between items-center;
 }
 
+.footer {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links li {
+  display: inline;
+}
+
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #000;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.custom_farm_style:hover {
+  animation: bounce 1.5s infinite;
+  display: inline-block;
+}
