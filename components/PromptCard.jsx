@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
@@ -31,7 +31,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
       <div className='flex justify-between items-start gap-5'>
         <div
           className='flex-1 flex justify-start items-center gap-3 cursor-pointer'
-          onClick={handleProfileClick}
+        // onClick={handleProfileClick}
         >
           <Image
             src={post.creator.image}
@@ -49,9 +49,12 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
               {post.creator.email}
             </p>
           </div>
+          <div className="img" src={post.image}>
+
+          </div>
         </div>
 
-        <div className='copy_btn' onClick={handleCopy}>
+        <div className='copy_btn'>
           <Image
             src={
               copied === post.prompt
@@ -67,17 +70,17 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
 
       <p className='my-4 font-satoshi text-sm text-gray-700'>{post.prompt}</p>
 
-      {/* {post.image && (
+      {post.image && (
         <div className='post_image'>
           <Image
-            src={post.image}
+            src={post.image} // Use the image URL from MongoDB
             alt='post_image'
             width={200}
             height={200}
             objectFit='cover'
           />
         </div>
-      )} */}
+      )}
       <p
         className='font-inter text-sm blue_gradient cursor-pointer'
         onClick={() => handleTagClick && handleTagClick(post.location)}
@@ -91,15 +94,13 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
         >
           #{post.tag}
         </p>
-
-        <button
-          className='font-inter text-sm bg-gray-500 text-white px-2 py-1 rounded'
-          onClick={() => {
-            window.location.href = '/ReviewPage';
-          }}
-        >
-          Review
-        </button>
+        <Link href={`ReviewPage/${post._id}`}>
+          <button
+            className='font-inter text-sm bg-gray-500 text-white px-2 py-1 rounded'
+          >
+            Review
+          </button>
+        </Link>
 
       </div>
       {session?.user.id === post.creator._id && pathName === "/profile" && (
@@ -123,3 +124,5 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
 };
 
 export default PromptCard;
+
+
