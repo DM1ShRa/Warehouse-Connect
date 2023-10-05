@@ -67,17 +67,17 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
 
       <p className='my-4 font-satoshi text-sm text-gray-700'>{post.prompt}</p>
 
-      {/* {post.image && (
+      {post.image && (
         <div className='post_image'>
           <Image
-            src={post.image}
+            src={post.image} // Use the image URL from MongoDB
             alt='post_image'
             width={200}
             height={200}
             objectFit='cover'
           />
         </div>
-      )} */}
+      )}
       <p
         className='font-inter text-sm blue_gradient cursor-pointer'
         onClick={() => handleTagClick && handleTagClick(post.location)}

@@ -4,7 +4,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
   return (
     <section className='w-full max-w-full flex-start flex-col'>
       <h1 className='head_text text-left'>
-        <span className='grey_gradient'>{type} Post</span>
+        <span className='grey_gradient'>{type} Warehouse</span>
       </h1>
       <p className='desc text-left max-w-md'>
         {type} it on WarehouseConnect and let surplus food find its purpose, bringing hope and sustenance to those who need it.
