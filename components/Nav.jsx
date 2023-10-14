@@ -41,7 +41,7 @@ const Nav = () => {
                 Post
               </Link>
 
-              {/* <Link href="/create-prompt" 
+              {/* <Link href="/create-prompt"
                 className="black_btn">
                     PRODUCTS
                 </Link> */}

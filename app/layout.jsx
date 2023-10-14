@@ -6,6 +6,10 @@ import Provider from '@components/Provider';
 import { useEffect, useState } from 'react';
 import { UserLocationContext } from '@context/UserLocationContext';
 
+import Footer from '@components/Footer';
+
+
+
 
 // export const metadata = {
 //     title: "Warehouse Connect",
@@ -36,18 +40,7 @@ const RootLayout = ({ children }) => {
                             {children}
                         </main>
                         <br />
-                        <footer className="footer">
-                            <div className="container">
-                                <div className="footer-content">
-                                    <p>&copy; 2023 Warehouse Connect. All rights reserved.</p>
-                                    <ul className="footer-links">
-                                        <li><a href="#">Terms of Use</a></li>
-                                        <li><a href="#">Privacy Policy</a></li>
-                                        <li><a href="#">Contact Us</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </footer>
+                        <Footer/>
                     </UserLocationContext.Provider>
                 </Provider>
             </body>
