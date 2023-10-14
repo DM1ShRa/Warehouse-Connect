@@ -75,7 +75,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
       {post.image && (
         <div className='post_image'>
           <Image
-            src={post.image}
+            src={post.image.startsWith('data:image') ? post.image : `data:image/jpeg;base64,${post.image}`}
             alt='post_image'
             width={200}
             height={200}
@@ -83,6 +83,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
           />
         </div>
       )}
+      
 
       <p
         className='font-inter text-sm blue_gradient cursor-pointer'

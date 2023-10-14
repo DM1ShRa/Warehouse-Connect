@@ -1,6 +1,17 @@
 import Link from "next/link";
 
 const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const base64Image = event.target.result;
+        setPost({ ...post, image: base64Image });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
   return (
     <section className='w-full max-w-full flex-start flex-col'>
       <h1 className='head_text text-left'>
@@ -176,13 +187,13 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             Image URL
           </span>
           <input
-            value={post.image}
-            onChange={(e) => setPost({ ...post, image: e.target.value })}
-            type='text'
-            placeholder='Goods Type'
+            onChange={(e) => handleImageUpload(e)}
+            type='file'
+            accept='image/*'
             required
             className='form_input'
           />
+
         </label>
 
         <div className='flex-end mx-3 mb-5 gap-4'>
