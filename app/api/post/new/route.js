@@ -6,14 +6,8 @@ export const POST = async (request) => {
     const { userId, prompt, tag, location, image } = await request.json();
 
     await connectToDb();
-
-    const newPrompt = new Warehouse({
-      creator: userId,
-      prompt,
-      tag,
-      location,
-      image,
-    });
+    
+    const newPrompt = new Warehouse({ creator: userId, prompt, tag, location, image });
     console.log(newPrompt);
     await newPrompt.save();
     return new Response(JSON.stringify(newPrompt), { status: 201 });

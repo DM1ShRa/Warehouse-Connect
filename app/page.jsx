@@ -2,6 +2,9 @@
 import React, { useRef } from "react";
 import Feed from "@components/Feed";
 import GoogleMapView from "@components/GoogleMapsView";
+import { useSession } from "next-auth/react";
+import AdminPage from "@components/AdminPage";
+
 
 const LandingPage = () => {
   const feedRef = useRef(null);
@@ -10,7 +13,14 @@ const LandingPage = () => {
     if (feedRef.current) {
       feedRef.current.scrollIntoView({ behavior: "smooth" });
     }
+    
   };
+  const {data : session } = useSession();
+  if(session?.user.email=='2021.abhishek.jadhav@ves.ac.in'){
+    return(
+      <AdminPage/>
+    )
+  }
 
   return (
     <section className="w-full  flex-col">

@@ -51,6 +51,14 @@ const WarehouseSchema = new Schema({
   image:{
     type :String ,
     required: [true, 'image type is required.'],
+  },
+  isVerified:{
+    type : Boolean,
+    default: false,
+  },
+  priceString:{
+    type :String ,
+    default: '',
   }
 });
 

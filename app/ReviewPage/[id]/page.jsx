@@ -3,10 +3,16 @@
 import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import { checkout } from '@lib/checkout';
+
 
 export default function Review({ params }) {
   const [value, setValue] = useState(2);
   const [data, setData] = useState(null);
+  const { data: session } = useSession();
+  const router = useRouter();
 
   useEffect(() => {
     fetch(`/api/prompt/${params.id}`)
@@ -15,6 +21,66 @@ export default function Review({ params }) {
         setData(data);
       });
   }, [params.id]);
+
+  const handleVerification = async () => {
+    debugger;
+    try {
+      console.log(params.id);
+      const price = document.getElementById("price_string").value;
+      const response = await fetch(`/api/prompt/${params.id}`, {
+        method: 'PATCH',
+        body: JSON.stringify({
+          price: price,
+        })
+      });
+
+      if (response.ok) {
+        router.push('/');
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const handleCheckout = async () => {
+    debugger;
+
+    // const shipping_address = document.getElementById("shipping_address").value;
+    try {
+
+
+      const response = await fetch('/api/order/new', {
+        method: 'POST',
+        body: JSON.stringify({
+          owner: data.creator._id,
+          customer: session?.user.id,
+          product: data._id,
+        })
+      });
+
+
+
+
+      if (response.ok) {
+        await fetch(`/api/prompt/${params.id}`, {
+          method: 'DELETE',
+        });
+
+        await checkout({
+          lineItems: [{ price: data.priceString, quantity: 1 }]
+        });
+
+      }
+    } catch (error) {
+
+    }
+
+
+
+
+
+
+  }
 
   return (
     <div className="max-w-xl mx-auto p-6 border rounded-lg shadow-lg bg-white mt-6 flex">
@@ -47,6 +113,27 @@ export default function Review({ params }) {
                 }}
               />
             </Box>
+            {
+              (session?.user.email == "2021.abhishek.jadhav@ves.ac.in") ? (
+                <>
+                  <li><strong>Enter price-string:</strong></li>
+                  <input type="text" name="price_string" id="price_string" />
+                </>
+
+              ) : (<>
+                {/* <li><strong>Enter Delivery Address:</strong></li>
+                <input type="text" name="shipping_address" id="shipping_address" /> */}
+
+              </>)
+            }
+            <div className="product-actions">
+              {
+                (session?.user.email == "2021.abhishek.jadhav@ves.ac.in") ? (
+                  <button id="verify-btn" onClick={handleVerification} className="btn explore_btn">Verify</button>
+                ) : (<button id="buy-btn" onClick={handleCheckout} className="btn explore_btn">Proceed to pay</button>)
+              }
+
+            </div>
           </div>
         </>
       )}

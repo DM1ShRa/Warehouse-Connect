@@ -1,14 +1,13 @@
 import React from 'react';
-import Link from 'next/link';  // Import Link from next
+import Link from 'next/link';
 
 function Footer() {
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-content">
+    <footer className="bg-gray-100 py-4">
+      <div className="container mx-auto">
+        <div className="flex justify-between items-center">
           <p>&copy; 2023 Warehouse Connect. All rights reserved.</p>
           <ul className="footer-links">
-            {/* Use Link component for client-side navigation */}
             <li>
               <Link href="/Terms">
                 Terms of Use
@@ -20,7 +19,7 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/ContactUs">
+              <Link href="/Contact">
                 Contact Us
               </Link>
             </li>

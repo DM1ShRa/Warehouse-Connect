@@ -1,4 +1,5 @@
 import Link from "next/link";
+import GoogleMapsView from "./GoogleMapsView";
 
 const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
   const handleImageUpload = (e) => {
@@ -209,6 +210,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             {submitting ? `${type}ing...` : type}
           </button>
         </div>
+        <GoogleMapsView post={post} />
       </form>
     </section>
   );

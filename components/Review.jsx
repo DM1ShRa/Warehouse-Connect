@@ -6,6 +6,7 @@ const ReviewPage = () => {
     <div className='review_page'>
       Review
     </div>
+    
   );
 };
 
