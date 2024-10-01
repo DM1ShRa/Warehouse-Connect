@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Warehouse Connect
 
-## Getting Started
+Warehouse Connect is a web-based platform designed to connect warehouses across the country with government agencies and business owners to reduce food and product wastage. This project aims to optimize the utilization of available warehouse spaces for storing surplus goods, thereby mitigating supply chain inefficiencies.
 
-First, run the development server:
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Key Features](#key-features)
+- [Technology Stack](#technology-stack)
+- [Setup Instructions](#setup-instructions)
+- [Usage](#usage)
+- [Contributors](#contributors)
+- [License](#license)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Project Overview
+The primary motivation behind Warehouse Connect is to provide a solution for the large-scale food and product wastage caused by inefficient supply chain and warehouse management systems. The platform allows warehouse owners to list available storage spaces and facilitates government agencies and business owners to reserve these spaces for their surplus goods, ensuring they are stored safely and efficiently.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+By connecting available storage with demand, Warehouse Connect minimizes economic losses and contributes to a more sustainable food supply chain.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Goals:
+- **Reduce food and product wastage** by improving warehouse utilization.
+- **Optimize food distribution** through better management of surplus storage.
+- **Promote sustainability** by reducing resource waste and carbon footprint.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Key Features
+- **User Registration & Authentication**: Secure user accounts with the ability to list warehouses or find and reserve storage spaces.
+- **Real-Time Warehouse Search**: Locate nearby warehouses with available storage capacity based on geolocation.
+- **Inventory Management**: Track, update, and manage stored goods within the platform.
+- **Booking & Reservations**: Easy booking process for reserving warehouse spaces.
+- **Data Analytics**: Insights into storage utilization trends, warehouse performance, and inventory management.
 
-## Learn More
+## Technology Stack
+- **Frontend**: React.js
+- **Backend**: Flask (Python)
+- **Database**: MySQL or PostgreSQL (depending on deployment)
+- **Maps API**: Google Maps API for geolocation services
+- **Authentication**: OAuth2 for secure user authentication
+- **Hosting**: Deployed using AWS or any cloud provider
 
-To learn more about Next.js, take a look at the following resources:
+## Setup Instructions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/warehouse-connect.git
+    cd warehouse-connect
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. **Install the backend dependencies:**
+    ```bash
+    cd backend
+    pip install -r requirements.txt
+    ```
 
-## Deploy on Vercel
+3. **Set up environment variables:**
+    Create a `.env` file in the backend directory and add necessary environment variables like:
+    - `DB_URI` for the database connection string
+    - `GOOGLE_MAPS_API_KEY` for map services
+    - `SECRET_KEY` for Flask session management
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Install the frontend dependencies:**
+    ```bash
+    cd frontend
+    npm install
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+5. **Run the development servers:**
+    For the backend:
+    ```bash
+    cd backend
+    flask run
+    ```
+    For the frontend:
+    ```bash
+    cd frontend
+    npm start
+    ```
+
+6. **Access the application**: Visit `http://localhost:3000` to use the platform.
+
+## Usage
+
+1. **Sign Up/Login**: Users can create accounts or log in to the platform.
+2. **List Warehouse**: Warehouse owners can list their available spaces by providing location, capacity, and pricing.
+3. **Search Warehouses**: Users can search for available warehouse spaces near them using the integrated Google Maps API.
+4. **Make Reservations**: Users can reserve spaces for storing their surplus goods based on availability and storage requirements.
+5. **Track Inventory**: Manage and monitor goods stored in the reserved warehouses through the platform’s dashboard.
+
+## Contributors
+- Abhishek Jadhav
+- Darash Mishra
+- Aaqueeb Pinjari
+- Kanak Pendse
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
