@@ -88,7 +88,6 @@ By connecting available storage with demand, Warehouse Connect minimizes economi
 - Abhishek Jadhav
 - Darash Mishra
 - Aaqueeb Pinjari
-- Kanak Pendse
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
