@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/5cb3e386-57c0-429e-a5be-1f6708ba3731)# Warehouse Connect
+# Warehouse Connect
 
 Warehouse Connect is a web-based platform designed to connect warehouses across the country with government agencies and business owners to reduce food and product wastage. This project aims to optimize the utilization of available warehouse spaces for storing surplus goods, thereby mitigating supply chain inefficiencies.
 
