@@ -1,4 +1,4 @@
-# Warehouse Connect
+![image](https://github.com/user-attachments/assets/5cb3e386-57c0-429e-a5be-1f6708ba3731)# Warehouse Connect
 
 Warehouse Connect is a web-based platform designed to connect warehouses across the country with government agencies and business owners to reduce food and product wastage. This project aims to optimize the utilization of available warehouse spaces for storing surplus goods, thereby mitigating supply chain inefficiencies.
 
@@ -83,6 +83,11 @@ By connecting available storage with demand, Warehouse Connect minimizes economi
 3. **Search Warehouses**: Users can search for available warehouse spaces near them using the integrated Google Maps API.
 4. **Make Reservations**: Users can reserve spaces for storing their surplus goods based on availability and storage requirements.
 5. **Track Inventory**: Manage and monitor goods stored in the reserved warehouses through the platform’s dashboard.
+
+![image](https://github.com/user-attachments/assets/f61b00f2-8626-4a2c-b8e9-26ba39fb7939)
+![image](https://github.com/user-attachments/assets/6bf0328a-4fac-4884-b899-0f71eb7dd1e4)
+![image](https://github.com/user-attachments/assets/fe135e47-0bc3-4668-afd4-4d30c7d65af0)
+![image](https://github.com/user-attachments/assets/01f8fcd3-0c93-4365-8259-516e0eca6a44)
 
 ## Contributors
 - Abhishek Jadhav
